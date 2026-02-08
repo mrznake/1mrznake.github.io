@@ -1,2 +1,2 @@
-# 1mrznake.github.io
+# mrznake.github.io
 Mi CV web interactivo
