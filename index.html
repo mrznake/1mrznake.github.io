@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CV web de Oswaldo A.R.G. - Técnico en Informática en formación como desarrollador web.">
+    <title>CV · Oswaldo A.R.G.</title>
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&family=Gelasio:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="menu" aria-label="Navegación principal">
+        <ul>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="contenedor">
+        <header class="cabecera">
+            <div class="header-flex">
+                <h1>Oswaldo A.R.G.</h1>
+                <p class="subtitulo">Técnico en Informática · En formación Web</p>
+                <figure>
+                    <img src="./imagenes/1.png" alt="Foto profesional de Oswaldo A.R.G." width="180" height="180">
+                    <figcaption>Foto actual (2026)</figcaption>
+                </figure>
+            </div>
+        </header>
+
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>Técnico en informática con interés en retomar el desarrollo web, mantenimiento preventivo y correctivo.</p>
+        </section>
+
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+            <ul class="habilidades-grid">
+                <li>HTML5<br><span>Estructura semántica</span></li>
+                <li>CSS3<br><span>Layouts, Flexbox</span></li>
+                <li>
+                    <img src="./imagenes/js.png" alt="Logo de JavaScript" width="30" height="30">
+                    JavaScript<br><span>Básico, DOM, Eventos</span>
+                </li>
+                <li>Buenas prácticas<br><span>Maquetación básica</span></li>
+            </ul>
+        </section>
+
+        <section id="proyectos">
+            <h2>Proyectos</h2>
+            <p>
+                CV web personal desarrollado con HTML, CSS y JavaScript como parte de mi proceso 
+                de actualización profesional.
+            </p>
+            <!-- Aquí puedes agregar más proyectos en el futuro como cards -->
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>
+                Email: <a href="mailto:osvaldorg27@gmail.com">osvaldorg27@gmail.com</a>
+            </p>
+            <p>
+                GitHub: <a href="https://github.com/mrznake" target="_blank" rel="noopener noreferrer">github.com/mrznake</a>
+            </p>
+            <p>
+                Celular: <a href="tel:+525512014918">+52 551 201 4918</a>
+            </p>
+        </section>
+    </main>
+
+    <!-- Script de animación (Intersection Observer) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Opcional: dejar de observar una vez visible para mejor performance
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 }); // 15% visible para activar antes
+
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+</body>
+</html>
