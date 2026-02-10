@@ -4,7 +4,7 @@
     padding: 0;
 }
 
-/* Variables globales */
+
 :root {
     --bg-body: #f8fafc;
     --bg-container: white;
@@ -21,8 +21,6 @@
     --shadow-medium: rgba(0,0,0,0.12);
     --shadow-img: rgba(0,0,0,0.1);
 }
-
-/* Dark mode automático */
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-body: #0f172a;
@@ -42,10 +40,10 @@
     }
 }
 
-/* Base del documento */
+
 html {
     height: 100%;
-    scroll-behavior: smooth; /* smooth scroll a secciones */
+    scroll-behavior: smooth; 
 }
 
 body {
@@ -67,7 +65,7 @@ h1, h2 {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
-/* Limitamos transiciones globales para mejor performance */
+
 a, button, .habilidades-grid li, section {
     transition: all 0.25s ease;
 }
@@ -118,7 +116,6 @@ a, button, .habilidades-grid li, section {
     color: var(--accent);
 }
 
-/* Cabecera / Hero */
 .cabecera {
     text-align: center;
     margin-bottom: 60px;
@@ -229,8 +226,73 @@ figure img {
     font-weight: 400;
     color: var(--text-muted);
 }
+.cta {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+    margin-top: 1.5em;
+}
+ol {
+    padding-left: 2.5rem;         
+    margin: 1.5em 0;
+    color: var(--text-primary);
+    list-style-type: decimal-leading-zero; 
+}
 
-/* Texto general */
+ol li {
+    margin-bottom: 0.8em;
+    line-height: 1.6;
+}
+
+
+ol li::marker {
+    color: var(--accent);
+    font-weight: bold;
+}
+.experiencia-lista {
+    list-style-type: none;          
+    padding-left: 0;
+    margin: 1.5em 0;
+}
+
+.experiencia-lista li {
+    position: relative;
+    padding-left: 2.5rem;           
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-left: 3px solid var(--accent);  
+}
+
+.experiencia-lista li::before {
+    content: "•";                   
+    position: absolute;
+    left: -8px;
+    top: 4px;
+    color: var(--accent);
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.experiencia-lista strong {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 0.3em;
+}
+
+.experiencia-lista .fecha {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 0.5em;
+}
+
+.experiencia-lista p {
+    margin: 0;
+    color: var(--text-p);
+}
+
 p {
     max-width: 680px;
     color: var(--text-p);
@@ -242,8 +304,8 @@ li {
     font-weight: 400;
 }
 
-/* Hover links */
+
 a:hover {
     color: var(--accent);
-
 }
+
